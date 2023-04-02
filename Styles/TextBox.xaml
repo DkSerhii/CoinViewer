@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType ="{x:Type TextBox}" 
-           x:Key="Text_Box_Style">
+           x:Key="Search_Box_Style">
         
         <Setter Property="Template">
             
@@ -13,7 +13,8 @@
                     <Border CornerRadius="10" 
                             Background="#353340" 
                             Width="200" 
-                            Height="40">
+                            Height="40"
+                            Margin="20,0,0,0">
                         
                         <Grid>
                             

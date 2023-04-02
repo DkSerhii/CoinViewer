@@ -26,7 +26,8 @@
                       Background="#272B2F"
                       BorderThickness="0"
                       GridLinesVisibility="None"
-                      Margin="20">
+                      Margin="20"
+                      RowStyle="{StaticResource Datagrid_Row_Style}">
 
                 <DataGrid.Columns>
 
@@ -39,7 +40,8 @@
                             <DataTemplate>
                                 <TextBlock Text="{Binding name}"
                                            VerticalAlignment="Center"
-                                           FontSize="14"/>
+                                           FontSize="14"
+                                           Margin="5,0,0,0"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
 

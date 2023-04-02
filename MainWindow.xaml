@@ -56,11 +56,11 @@
 
                 <TextBox HorizontalAlignment="Left"
                          Margin="15,0,0,0"
-                         Style="{StaticResource Text_Box_Style}"/>
+                         Style="{StaticResource Search_Box_Style}"/>
 
                 <Button x:Name="CloseApp"
-                Style="{StaticResource ExitApp}"
-                Click="CloseApp_Click" />
+                        Style="{StaticResource ExitApp}"
+                        Click="CloseApp_Click" />
 
             </Grid>
             
