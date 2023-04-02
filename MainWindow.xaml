@@ -31,14 +31,32 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid>
+
+                <Border CornerRadius="20,0,0,0"
+                        Background="#272B2F">
+
+                    <TextBlock Text="CoinViewer"
+                   Style="{StaticResource Text_Style}"
+                           FontSize="25"
+                           Margin="30,0,0,0"/>
+
+                </Border>
+
+
+            </Grid>
+
             <Grid HorizontalAlignment="Left"
-                  Width="228">
+                  Width="228"
+                  Grid.Row="1"
+                  Background="#272B2F">
 
-                <Border Background="#272B2F"
-                        CornerRadius="20,0,0,20" />
-
-                <StackPanel Height="400"
-                            Width="228">
+                <StackPanel>
 
                     <utilities:CustomRadioButton Style="{StaticResource Radio_Button_Style}"
                                                  IsChecked="True"
@@ -53,7 +71,7 @@
                                        Style="{StaticResource Text_Style}"/>
 
                         </Grid>
-                        
+
                     </utilities:CustomRadioButton>
 
                     <utilities:CustomRadioButton Style="{StaticResource Radio_Button_Style}"
@@ -76,7 +94,8 @@
             </Grid>
 
             <ContentControl Grid.Column="1"
-                        Content="{Binding CurrentView}"/>
+                            Grid.Row="1"
+                            Content="{Binding CurrentView}"/>
 
         </Grid>
 

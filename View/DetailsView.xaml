@@ -7,8 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="200"
              d:DesignWidth="200"
-             Background="Green">
-    <Grid>
+             Style="{StaticResource Page_Style}">
+    <Grid Margin="15" Background="Green">
             
     </Grid>
 </UserControl>

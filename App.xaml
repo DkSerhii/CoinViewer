@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="/Styles/RadioButton.xaml"/>
                 <ResourceDictionary Source="/Styles/Text.xaml"/>
                 <ResourceDictionary Source="/Styles/Image.xaml"/>
+                <ResourceDictionary Source="/Styles/Page.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
 
