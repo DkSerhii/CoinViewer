@@ -8,6 +8,14 @@
     <Application.Resources>
         <ResourceDictionary>
 
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="/Styles/RadioButton.xaml"/>
+                <ResourceDictionary Source="/Styles/Text.xaml"/>
+                <ResourceDictionary Source="/Styles/Image.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>

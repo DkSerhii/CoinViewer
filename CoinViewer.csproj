@@ -7,4 +7,64 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\img_customer.png" />
+    <None Remove="Images\img_home.png" />
+    <None Remove="Images\img_order.png" />
+    <None Remove="Images\img_product.png" />
+    <None Remove="Images\img_setting.png" />
+    <None Remove="Images\img_shipment.png" />
+    <None Remove="Images\img_transaction.png" />
+    <None Remove="Images\shutdown_def.png" />
+    <None Remove="Images\shutdown_mo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\img_customer.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\img_home.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\img_order.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\img_product.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\img_setting.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\img_shipment.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\img_transaction.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\shutdown_def.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\shutdown_mo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
 </Project>
