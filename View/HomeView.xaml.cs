@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoinViewer.DataModel;
+using CoinViewer.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,8 @@ namespace CoinViewer.View
         public HomeView()
         {
             InitializeComponent();
+
+            DataGridCoins.ItemsSource = GenerateData.generateCryptoCoin();
         }
     }
 }

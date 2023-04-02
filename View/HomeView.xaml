@@ -11,7 +11,75 @@
              Style="{StaticResource Page_Style}">
 
 
-    <Grid Margin="15" Background="Blue">
+    <Grid Margin="15" Background="Transparent">
+
+        <Grid Margin="20">
+
+            <Border CornerRadius="20"
+                    Background="#272B2F"/>
+
+            <DataGrid Name="DataGridCoins"
+                      AutoGenerateColumns="False"
+                      CanUserResizeColumns="False"
+                      CanUserResizeRows="False"
+                      RowHeaderWidth="0"
+                      Background="#272B2F"
+                      BorderThickness="0"
+                      GridLinesVisibility="None"
+                      Margin="20">
+
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn Header="Name"
+                                            HeaderStyle="{StaticResource Datagrid_Header_Style}"
+                                            CellStyle="{StaticResource Datagrid_Cell_style}"
+                                            Width="170">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding name}"
+                                           VerticalAlignment="Center"
+                                           FontSize="14"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Symbol"
+                                            HeaderStyle="{StaticResource Datagrid_Header_Style}"
+                                            CellStyle="{StaticResource Datagrid_Cell_style}"
+                                            Width="170">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding symbol}"
+                                           VerticalAlignment="Center"
+                                           FontSize="14"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Price"
+                                            HeaderStyle="{StaticResource Datagrid_Header_Style}"
+                                            CellStyle="{StaticResource Datagrid_Cell_style}"
+                                            Width="*">
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding price}"
+                                           VerticalAlignment="Center"
+                                           FontSize="14"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+                    
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Grid>
 
     </Grid>
     
