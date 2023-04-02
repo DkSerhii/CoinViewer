@@ -7,8 +7,12 @@
         xmlns:viewModel="clr-namespace:CoinViewer.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="450" 
-        Width="800">
+        Height="600" 
+        Width="850"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent">
 
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -16,23 +20,39 @@
 
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <Border Background="#212529"
+                CornerRadius="20"/>
 
-        <StackPanel>
+        <Grid>
 
-            <RadioButton Content="Home"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="228"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid HorizontalAlignment="Left"
+                  Width="228">
+
+                <Border Background="#272B2F"
+                        CornerRadius="20,0,0,20" />
+
+                <StackPanel Height="400"
+                            Width="228">
+
+                    <RadioButton Content="Home"
                      Command="{Binding HomeViewCommand}"/>
 
-            <RadioButton Content="Details"
+                    <RadioButton Content="Details"
                      Command="{Binding DetailsViewCommand}"/>
 
-        </StackPanel>
+                </StackPanel>
 
-        <ContentControl Grid.Column="1"
+            </Grid>
+
+            <ContentControl Grid.Column="1"
                         Content="{Binding CurrentView}"/>
+
+        </Grid>
 
     </Grid>
 </Window>
