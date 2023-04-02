@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CoinViewer"
         xmlns:viewModel="clr-namespace:CoinViewer.ViewModel"
+        xmlns:utilities="clr-namespace:CoinViewer.Utilities"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="600" 
@@ -39,11 +40,36 @@
                 <StackPanel Height="400"
                             Width="228">
 
-                    <RadioButton Content="Home"
-                     Command="{Binding HomeViewCommand}"/>
+                    <utilities:CustomRadioButton Style="{StaticResource Radio_Button_Style}"
+                                                 IsChecked="True"
+                                                 Command="{Binding HomeViewCommand}">
 
-                    <RadioButton Content="Details"
-                     Command="{Binding DetailsViewCommand}"/>
+                        <Grid>
+
+                            <Image Source="/Images/img_home.png"
+                                   Style="{StaticResource Image_Style}"/>
+
+                            <TextBlock Text="Home"
+                                       Style="{StaticResource Text_Style}"/>
+
+                        </Grid>
+                        
+                    </utilities:CustomRadioButton>
+
+                    <utilities:CustomRadioButton Style="{StaticResource Radio_Button_Style}"
+                                                 Command="{Binding DetailsViewCommand}">
+
+                        <Grid>
+
+                            <Image Source="/Images/img_order.png"
+                                   Style="{StaticResource Image_Style}"/>
+
+                            <TextBlock Text="Details" 
+                                       Style="{StaticResource Text_Style}"/>
+
+                        </Grid>
+
+                    </utilities:CustomRadioButton>
 
                 </StackPanel>
 
