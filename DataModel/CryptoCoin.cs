@@ -10,13 +10,13 @@ namespace CoinViewer.DataModel
     {
         public string symbol { get; set; }
         public string name { get; set; }
-        public double price { get; set; }
+        public double priceUsd { get; set; }
 
-        public CryptoCoin(string symbol, string name, double price)
+        public CryptoCoin(string symbol, string name, double priceUsd)
         {
             this.symbol = symbol;
             this.name = name;
-            this.price = price;
+            this.priceUsd = priceUsd;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CoinViewer.DataModel;
+using CoinViewer.Services;
 using CoinViewer.Utilities;
 using System;
 using System.Collections.Generic;
@@ -17,16 +18,25 @@ using System.Windows.Shapes;
 
 namespace CoinViewer.View
 {
-    /// <summary>
-    /// Interaction logic for HomeView.xaml
-    /// </summary>
     public partial class HomeView : UserControl
     {
         public HomeView()
         {
             InitializeComponent();
 
-            DataGridCoins.ItemsSource = GenerateData.generateCryptoCoin();
+            CalloutService calloutService = new CalloutService();
+            String endpoint = CalloutService.endpointBuilder(CalloutService.DEFAULT_SEARCH);
+
+            string calloutResult = GetAsyncProperty(endpoint);
+
+            List<CryptoCoin> cryptoCoins = JsonParser.parseCoins(calloutResult);
+
+            DataGridCoins.ItemsSource = cryptoCoins;
+        }
+
+        private string GetAsyncProperty(string endpoint)
+        {
+            return Task.Run(() => CalloutService.performCallout(endpoint)).Result;
         }
     }
 }

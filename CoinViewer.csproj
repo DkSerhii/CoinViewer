@@ -32,6 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\img_customer.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

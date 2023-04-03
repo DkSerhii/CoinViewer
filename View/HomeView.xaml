@@ -56,22 +56,24 @@
                             <DataTemplate>
                                 <TextBlock Text="{Binding symbol}"
                                            VerticalAlignment="Center"
-                                           FontSize="14"/>
+                                           FontSize="14"
+                                           Margin="5,0,0,0"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
 
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn Header="Price"
+                    <DataGridTemplateColumn Header="Price USD"
                                             HeaderStyle="{StaticResource Datagrid_Header_Style}"
                                             CellStyle="{StaticResource Datagrid_Cell_style}"
                                             Width="*">
 
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding price}"
+                                <TextBlock Text="{Binding priceUsd}"
                                            VerticalAlignment="Center"
-                                           FontSize="14"/>
+                                           FontSize="14"
+                                           Margin="5,0,0,0"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
 
