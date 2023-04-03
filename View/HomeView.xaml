@@ -27,6 +27,7 @@
                       BorderThickness="0"
                       GridLinesVisibility="None"
                       Margin="20"
+                      CanUserAddRows="False"
                       RowStyle="{StaticResource Datagrid_Row_Style}">
 
                 <DataGrid.Columns>

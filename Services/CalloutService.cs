@@ -15,6 +15,7 @@ namespace CoinViewer.Services
     {
         private const string COINCAP_URL = "https://api.coincap.io/v2/";
         public const string DEFAULT_SEARCH = "assets?limit=8";
+        public const string USER_SEARCH = "assets/";
 
         public static string endpointBuilder(string endpoint)
         {
@@ -34,6 +35,10 @@ namespace CoinViewer.Services
                 MessageBox.Show(ex.Message);
                 return "";
             }
+        }
+        public static string GetAsyncProperty(string endpoint)
+        {
+            return Task.Run(() => CalloutService.performCallout(endpoint)).Result;
         }
     }
 }

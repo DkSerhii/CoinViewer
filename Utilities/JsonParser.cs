@@ -2,35 +2,60 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Windows;
+using System.Diagnostics;
+using CoinViewer.View;
 
 namespace CoinViewer.Utilities
 {
     internal class JsonParser
     {
-        public static List<CryptoCoin> parseCoins(String json)
+        public static void parseCoins(String json)
         {
-            var convertedData = JsonConvert.DeserializeObject<ResponseData>(json);
             List<CryptoCoin> cryptoCoins = new List<CryptoCoin>();
 
-            foreach (var item in convertedData.data)
+            if (Cache.isSearhing == false)
             {
-                if (item.priceUsd < 10)
-                {
-                    item.priceUsd = Math.Round(item.priceUsd, 4);
-                } 
-                else
-                {
-                    item.priceUsd = Math.Round(item.priceUsd, 2);
-                }
-
-                cryptoCoins.Add(item);
+                var serializedData = JsonConvert.DeserializeObject<ResponseDataArray>(json);
+                assignCoins(serializedData.data);
             }
-            return cryptoCoins;
+            else if (Cache.isSearhing == true)
+            {
+                var serializedData = JsonConvert.DeserializeObject<ResponseDataSingleValue>(json);
+                CryptoCoin[] coinArray = new CryptoCoin[] { serializedData.data };
+                
+                assignCoins(coinArray);
+            }
         }
 
-        private class ResponseData
+        public static void assignCoins(CryptoCoin[] coins)
+        {
+            List<CryptoCoin> cryptoCoins = new List<CryptoCoin>();
+
+            foreach (CryptoCoin coin in coins)
+            {
+                if (coin.priceUsd < 10)
+                {
+                    coin.priceUsd = Math.Round(coin.priceUsd, 4);
+                }
+                else
+                {
+                    coin.priceUsd = Math.Round(coin.priceUsd, 2);
+                }
+
+                cryptoCoins.Add(coin);
+            }
+            Cache.coinsToShow = cryptoCoins;
+        }
+
+        private class ResponseDataArray
         {
             public CryptoCoin[] data { get; set; }
+        }
+
+        private class ResponseDataSingleValue
+        {
+            public CryptoCoin data { get; set; }
         }
     }
 }

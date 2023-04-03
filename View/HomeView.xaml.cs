@@ -20,23 +20,26 @@ namespace CoinViewer.View
 {
     public partial class HomeView : UserControl
     {
+        public event System.EventHandler coinsToShowChanged;
+
+        protected virtual void OnCoinsToShowChanged()
+        {
+            if (coinsToShowChanged != null) coinsToShowChanged(this, EventArgs.Empty);
+        }
+
         public HomeView()
         {
             InitializeComponent();
 
-            CalloutService calloutService = new CalloutService();
             String endpoint = CalloutService.endpointBuilder(CalloutService.DEFAULT_SEARCH);
 
-            string calloutResult = GetAsyncProperty(endpoint);
+            string calloutResult = CalloutService.GetAsyncProperty(endpoint);
 
-            List<CryptoCoin> cryptoCoins = JsonParser.parseCoins(calloutResult);
+            JsonParser.parseCoins(calloutResult);
 
-            DataGridCoins.ItemsSource = cryptoCoins;
-        }
+            DataGridCoins.ItemsSource = Cache.coinsToShow;
 
-        private string GetAsyncProperty(string endpoint)
-        {
-            return Task.Run(() => CalloutService.performCallout(endpoint)).Result;
+
         }
     }
 }
