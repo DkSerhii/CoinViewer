@@ -1,6 +1,8 @@
-﻿using CoinViewer.Services;
+﻿using CoinViewer.DataModel;
+using CoinViewer.Services;
 using CoinViewer.Utilities;
 using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -55,6 +57,8 @@ namespace CoinViewer.View
                 JsonParser.parseCoins(calloutResult);
 
                 DataGridCoins.ItemsSource = Cache.coinsToShow;
+
+                Cache.selectedCoin = Cache.coinsToShow[0];
             }
         }
 
@@ -66,6 +70,8 @@ namespace CoinViewer.View
         private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Cache.isSearhing = false;
+
+            Cache.selectedCoin = new CryptoCoin();
 
             String endpoint = CalloutService.endpointBuilder(CalloutService.DEFAULT_SEARCH);
 

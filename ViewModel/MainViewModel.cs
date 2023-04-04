@@ -11,9 +11,11 @@ namespace CoinViewer.ViewModel
     {
         public RelayCommand HomeViewCommand { get; set; }
         public RelayCommand DetailsViewCommand { get; set; }
+        public RelayCommand MarketsViewCommand { get; set; }
 
         public HomeViewModel HomeVM { get; set; }
         public DetailsViewModel DetailsVM { get; set; }
+        public MarketsViewModel MarketsVM { get; set; }
 
         private object _currentView;
 
@@ -27,6 +29,7 @@ namespace CoinViewer.ViewModel
         {
             HomeVM = new HomeViewModel();
             DetailsVM = new DetailsViewModel();
+            MarketsVM = new MarketsViewModel();
             CurrentView = HomeVM;
 
             HomeViewCommand = new RelayCommand(o =>
@@ -37,6 +40,11 @@ namespace CoinViewer.ViewModel
             DetailsViewCommand = new RelayCommand(o =>
             {
                 CurrentView = DetailsVM;
+            });
+
+            MarketsViewCommand = new RelayCommand(o =>
+            {
+                CurrentView = MarketsVM;
             });
         }
     }

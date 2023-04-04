@@ -17,6 +17,8 @@ namespace CoinViewer.Services
         private const string COINCAP_URL = "https://api.coincap.io/v2/";
         public const string DEFAULT_SEARCH = "assets?limit=8";
         public const string USER_SEARCH = "assets/";
+        public const string MARKET_SEARCH = "/markets?limit=8";
+        public const string EXCHANGES = "exchanges/";
 
         public static string endpointBuilder(string endpoint)
         {
@@ -35,7 +37,7 @@ namespace CoinViewer.Services
             catch (Exception ex) 
             { 
                 Cache.isCallotSucces = false;
-                MessageBox.Show(ex.Message + " Coin not found");
+                MessageBox.Show(ex.Message);
                 return "";
             }
         }

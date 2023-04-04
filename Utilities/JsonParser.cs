@@ -12,23 +12,56 @@ namespace CoinViewer.Utilities
     {
         public static void parseCoins(String json)
         {
-            List<CryptoCoin> cryptoCoins = new List<CryptoCoin>();
-
-            if (Cache.isSearhing == false)
+            if (!Cache.isSearhing)
             {
-                var serializedData = JsonConvert.DeserializeObject<ResponseDataArray>(json);
-                assignCoins(serializedData.data);
+                var serializedCoins = JsonConvert.DeserializeObject<ResponseDataCoins>(json);
+                assignCoins(serializedCoins.data);
             }
-            else if (Cache.isSearhing == true)
+            else
             {
-                var serializedData = JsonConvert.DeserializeObject<ResponseDataSingleValue>(json);
-                CryptoCoin[] coinArray = new CryptoCoin[] { serializedData.data };
+                var serializedCoin = JsonConvert.DeserializeObject<ResponseDataCoin>(json);
+                CryptoCoin[] coinArray = new CryptoCoin[] { serializedCoin.data };
                 
                 assignCoins(coinArray);
             }
         }
 
-        public static void assignCoins(CryptoCoin[] coins)
+        public static void parseMarkets(String json)
+        {
+            var serializedMarkets = JsonConvert.DeserializeObject<ResponseDataMarkets>(json);
+
+            assignMarkets(serializedMarkets.data);
+        }
+
+        public static void parseExchange(String json) 
+        {
+            var serializedExchange = JsonConvert.DeserializeObject<ResponseDataExchange>(json);
+            Exchange[] exchangeArray = new Exchange[] { serializedExchange.data };
+
+            assignExchange(exchangeArray);
+        }
+
+        private static void assignExchange(Exchange[] exchanges)
+        {
+            foreach (Exchange ex in exchanges)
+            {
+                Cache.selectedExchange = ex;
+            }
+        }
+
+        private static void assignMarkets(Market[] markets)
+        {
+            List<Market> marketsList = new List<Market>();
+
+            foreach (Market market in markets) 
+            {
+                marketsList.Add(market);
+            }
+
+            Cache.marketsToShow = marketsList;
+        }
+
+        private static void assignCoins(CryptoCoin[] coins)
         {
             List<CryptoCoin> cryptoCoins = new List<CryptoCoin>();
 
@@ -47,15 +80,24 @@ namespace CoinViewer.Utilities
             }
             Cache.coinsToShow = cryptoCoins;
         }
+        private class ResponseDataMarkets
+        {
+            public Market[] data { get; set; }
+        }
 
-        private class ResponseDataArray
+        private class ResponseDataCoins
         {
             public CryptoCoin[] data { get; set; }
         }
 
-        private class ResponseDataSingleValue
+        private class ResponseDataCoin
         {
             public CryptoCoin data { get; set; }
+        }
+
+        private class ResponseDataExchange
+        {
+            public Exchange data { get; set; }
         }
     }
 }
