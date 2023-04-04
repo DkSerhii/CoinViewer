@@ -31,25 +31,6 @@ namespace CoinViewer
             Close();
         }
 
-        private void TextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter) 
-            {
-                Cache.isSearhing = true;
-                Cache.searchValue = textBoxSearch.Text;
-
-                String endpoint = CalloutService.endpointBuilder(
-                    CalloutService.USER_SEARCH + Cache.searchValue);
-
-                string calloutResult = CalloutService.GetAsyncProperty(endpoint);
-
-                JsonParser.parseCoins(calloutResult);
-            }
-        }
-
-        private void textBoxSearch_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            textBoxSearch.Text = string.Empty;
-        }
+        
     }
 }

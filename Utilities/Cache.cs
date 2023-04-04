@@ -13,5 +13,6 @@ namespace CoinViewer.Utilities
         public static string searchValue = "";
         public static CryptoCoin selectedCoin = new CryptoCoin();
         public static bool isSearhing = false;
+        public static bool isCallotSucces = true;
     }
 }

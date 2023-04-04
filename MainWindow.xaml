@@ -54,20 +54,7 @@
             
             <Grid Grid.Column="1">
 
-                <Grid Margin="35,60,0,0"
-                      Height="40"
-                      Width="200"
-                      HorizontalAlignment="Left">
-
-                    <Border CornerRadius="10"
-                      Background="#272B2F"/>
-
-                    <TextBox x:Name="textBoxSearch"
-                             KeyDown="TextBox_KeyDown"
-                             Style="{StaticResource Search_Box_Style}"
-                             PreviewMouseLeftButtonDown="textBoxSearch_MouseLeftButtonDown"/>
-
-                </Grid>
+                
 
                 <Button x:Name="CloseApp"
                         Style="{StaticResource ExitApp}"

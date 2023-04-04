@@ -7,6 +7,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Windows;
+using CoinViewer.Utilities;
 
 namespace CoinViewer.Services
 {
@@ -28,11 +29,13 @@ namespace CoinViewer.Services
 
             try
             {
+                Cache.isCallotSucces = true;
                 return await client.GetStringAsync(endpoin);
             }
             catch (Exception ex) 
             { 
-                MessageBox.Show(ex.Message);
+                Cache.isCallotSucces = false;
+                MessageBox.Show(ex.Message + " Coin not found");
                 return "";
             }
         }

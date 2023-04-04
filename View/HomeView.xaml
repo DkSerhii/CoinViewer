@@ -13,6 +13,21 @@
 
     <Grid Margin="15" Background="Transparent">
 
+        <Grid Margin="35,-600,0,0"
+                      Height="40"
+                      Width="200"
+                      HorizontalAlignment="Left">
+
+            <Border CornerRadius="10"
+                      Background="#272B2F"/>
+
+            <TextBox x:Name="textBoxSearch"
+                             KeyDown="TextBox_KeyDown"
+                             Style="{StaticResource Search_Box_Style}"
+                             PreviewMouseLeftButtonDown="textBoxSearch_MouseLeftButtonDown"/>
+
+        </Grid>
+
         <Grid Margin="20">
 
             <Border CornerRadius="20"
