@@ -17,13 +17,30 @@
               Height="40"
               Width="40">
 
-            <Border CornerRadius="10"
-                    Background="#272B2F"
-                    x:Name="refresh_border"/>
-
-            <Image Source="/Images/img_refresh.png"
+            <Border CornerRadius="10">
+                
+                <Border.Style>
+                    <Style>
+                        <Style.Triggers>
+                            
+                            <Trigger Property="Border.IsMouseOver" Value="True">
+                                <Setter Property="Border.Background" Value="#272B2F" />
+                            </Trigger>
+                            
+                            <Trigger Property="Border.IsMouseCaptured" Value="True">
+                                <Setter Property="Border.Background" Value="AliceBlue" />
+                            </Trigger>
+                            
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                
+                <Image Source="/Images/img_refresh.png"
                    Margin="7"
                    MouseLeftButtonUp="Image_MouseLeftButtonUp"/>
+
+            </Border>
+
 
         </Grid>
 

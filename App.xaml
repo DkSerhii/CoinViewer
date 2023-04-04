@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="/Styles/TextBox.xaml"/>
                 <ResourceDictionary Source="/Styles/Button.xaml"/>
                 <ResourceDictionary Source="/Styles/Datagrid.xaml"/>
+                <ResourceDictionary Source="/Styles/Border.xaml"/>
 
             </ResourceDictionary.MergedDictionaries>
 

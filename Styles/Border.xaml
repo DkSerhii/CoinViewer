@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="refresh_border"
+           TargetType="Border">
+        
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseDirectlyOver"
+                     Value="True">
+
+                <Setter Property="Background"
+                        Value="Wheat"/>
+
+            </Trigger>
+            
+        </Style.Triggers>
+        
+    </Style>
+    
+</ResourceDictionary>
