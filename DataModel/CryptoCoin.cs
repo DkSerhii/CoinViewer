@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace CoinViewer.DataModel
 {
-    class CryptoCoin
+    public class CryptoCoin
     {
         public string symbol { get; set; }
         public string name { get; set; }
-        public double price { get; set; }
+        public double priceUsd { get; set; }
 
-        public CryptoCoin(string symbol, string name, double price)
+        public CryptoCoin()
         {
-            this.symbol = symbol;
-            this.name = name;
-            this.price = price;
         }
+
     }
 }
