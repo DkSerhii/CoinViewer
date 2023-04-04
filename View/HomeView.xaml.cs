@@ -62,5 +62,16 @@ namespace CoinViewer.View
         {
             Cache.selectedCoin = (DataModel.CryptoCoin)DataGridCoins.SelectedItem;
         }
+
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Cache.isSearhing = false;
+
+            String endpoint = CalloutService.endpointBuilder(CalloutService.DEFAULT_SEARCH);
+
+            initializeGrid(endpoint);
+
+            DataGridCoins.ItemsSource = Cache.coinsToShow;
+        }
     }
 }
