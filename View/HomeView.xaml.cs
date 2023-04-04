@@ -72,6 +72,8 @@ namespace CoinViewer.View
             initializeGrid(endpoint);
 
             DataGridCoins.ItemsSource = Cache.coinsToShow;
+
+            MessageBox.Show("Data updated!");
         }
     }
 }
