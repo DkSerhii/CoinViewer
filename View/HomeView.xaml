@@ -13,7 +13,21 @@
 
     <Grid Margin="15" Background="Transparent">
 
-        <Grid Margin="35,-600,0,0"
+        <Grid Margin="-50,-570,0,0"
+              Height="40"
+              Width="40">
+
+            <Border CornerRadius="10"
+                    Background="#272B2F"
+                    x:Name="refresh_border"/>
+
+            <Image Source="/Images/img_refresh.png"
+                   Margin="7"
+                   MouseLeftButtonUp="Image_MouseLeftButtonUp"/>
+
+        </Grid>
+
+        <Grid Margin="20,-570,0,0"
                       Height="40"
                       Width="200"
                       HorizontalAlignment="Left">
@@ -43,7 +57,8 @@
                       GridLinesVisibility="None"
                       Margin="20"
                       CanUserAddRows="False"
-                      RowStyle="{StaticResource Datagrid_Row_Style}">
+                      RowStyle="{StaticResource Datagrid_Row_Style}"
+                      MouseLeftButtonUp="DataGridCoins_MouseLeftButtonUp">
 
                 <DataGrid.Columns>
 

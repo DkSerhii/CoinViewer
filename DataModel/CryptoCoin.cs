@@ -9,8 +9,18 @@ namespace CoinViewer.DataModel
     public class CryptoCoin
     {
         public string symbol { get; set; }
+
         public string name { get; set; }
+
         public double priceUsd { get; set; }
+
+        public int rank { get; set; }
+
+        public double supply { get; set; }
+
+        public string maxSupply { get; set; }
+
+        public double changePercent24Hr { get; set; }
 
         public CryptoCoin()
         {

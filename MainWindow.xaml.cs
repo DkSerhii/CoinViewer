@@ -30,7 +30,5 @@ namespace CoinViewer
         {
             Close();
         }
-
-        
     }
 }

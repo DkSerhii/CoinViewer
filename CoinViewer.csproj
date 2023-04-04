@@ -20,6 +20,7 @@
     <None Remove="Images\img_home.png" />
     <None Remove="Images\img_order.png" />
     <None Remove="Images\img_product.png" />
+    <None Remove="Images\img_refresh.png" />
     <None Remove="Images\img_setting.png" />
     <None Remove="Images\img_shipment.png" />
     <None Remove="Images\img_transaction.png" />
@@ -48,6 +49,7 @@
     <Resource Include="Images\img_product.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\img_refresh.png" />
     <Resource Include="Images\img_setting.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

@@ -1,21 +1,9 @@
-﻿using CoinViewer.DataModel;
-using CoinViewer.Services;
+﻿using CoinViewer.Services;
 using CoinViewer.Utilities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CoinViewer.View
 {
@@ -25,14 +13,22 @@ namespace CoinViewer.View
         {
             InitializeComponent();
 
-            String endpoint = CalloutService.endpointBuilder(CalloutService.DEFAULT_SEARCH);
+            if (!Cache.isDataLoaded)
+            {
+                String endpoint = CalloutService.endpointBuilder(CalloutService.DEFAULT_SEARCH);
 
-            initializeGrid(endpoint);
+                initializeGrid(endpoint);
+                Cache.isDataLoaded = true;
+            }
+            else if (Cache.isDataLoaded) 
+            {
+                DataGridCoins.ItemsSource = Cache.coinsToShow;
+            }
         }
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter && textBoxSearch.Text.Length > 0)
             {
                 Cache.isSearhing = true;
                 Cache.searchValue = textBoxSearch.Text;
@@ -60,6 +56,22 @@ namespace CoinViewer.View
 
                 DataGridCoins.ItemsSource = Cache.coinsToShow;
             }
+        }
+
+        private void DataGridCoins_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Cache.selectedCoin = (DataModel.CryptoCoin)DataGridCoins.SelectedItem;
+        }
+
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Cache.isSearhing = false;
+
+            String endpoint = CalloutService.endpointBuilder(CalloutService.DEFAULT_SEARCH);
+
+            initializeGrid(endpoint);
+
+            DataGridCoins.ItemsSource = Cache.coinsToShow;
         }
     }
 }
