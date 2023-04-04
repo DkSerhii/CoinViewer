@@ -102,6 +102,21 @@
 
                     </utilities:CustomRadioButton>
 
+                    <utilities:CustomRadioButton Style="{StaticResource Radio_Button_Style}"
+                                                 Command="{Binding MarketsViewCommand}">
+
+                        <Grid>
+
+                            <Image Source="/Images/img_order.png"
+                                   Style="{StaticResource Image_Style}"/>
+
+                            <TextBlock Text="Markets" 
+                                       Style="{StaticResource Text_Style}"/>
+
+                        </Grid>
+
+                    </utilities:CustomRadioButton>
+
                 </StackPanel>
 
             </Grid>

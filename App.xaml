@@ -28,7 +28,11 @@
             <DataTemplate DataType="{x:Type viewModel:DetailsViewModel}">
                 <view:DetailsView/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type viewModel:MarketsViewModel}">
+                <view:MarketsView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

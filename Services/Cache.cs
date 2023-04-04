@@ -20,5 +20,9 @@ namespace CoinViewer.Utilities
         public static bool isCallotSucces = true;
 
         public static bool isDataLoaded = false;
+
+        public static List<Market> marketsToShow = new List<Market>();
+
+        public static Market selectedMarket = new Market(); 
     }
 }
