@@ -20,13 +20,6 @@ namespace CoinViewer.View
 {
     public partial class HomeView : UserControl
     {
-        public event System.EventHandler coinsToShowChanged;
-
-        protected virtual void OnCoinsToShowChanged()
-        {
-            if (coinsToShowChanged != null) coinsToShowChanged(this, EventArgs.Empty);
-        }
-
         public HomeView()
         {
             InitializeComponent();
@@ -38,8 +31,6 @@ namespace CoinViewer.View
             JsonParser.parseCoins(calloutResult);
 
             DataGridCoins.ItemsSource = Cache.coinsToShow;
-
-
         }
     }
 }
