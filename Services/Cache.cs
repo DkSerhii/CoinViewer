@@ -24,5 +24,7 @@ namespace CoinViewer.Utilities
         public static List<Market> marketsToShow = new List<Market>();
 
         public static Market selectedMarket = new Market(); 
+
+        public static Exchange selectedExchange = new Exchange();
     }
 }

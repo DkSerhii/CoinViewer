@@ -33,6 +33,22 @@ namespace CoinViewer.Utilities
             assignMarkets(serializedMarkets.data);
         }
 
+        public static void parseExchange(String json) 
+        {
+            var serializedExchange = JsonConvert.DeserializeObject<ResponseDataExchange>(json);
+            Exchange[] exchangeArray = new Exchange[] { serializedExchange.data };
+
+            assignExchange(exchangeArray);
+        }
+
+        private static void assignExchange(Exchange[] exchanges)
+        {
+            foreach (Exchange ex in exchanges)
+            {
+                Cache.selectedExchange = ex;
+            }
+        }
+
         private static void assignMarkets(Market[] markets)
         {
             List<Market> marketsList = new List<Market>();
@@ -77,6 +93,11 @@ namespace CoinViewer.Utilities
         private class ResponseDataCoin
         {
             public CryptoCoin data { get; set; }
+        }
+
+        private class ResponseDataExchange
+        {
+            public Exchange data { get; set; }
         }
     }
 }

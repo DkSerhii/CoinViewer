@@ -44,11 +44,18 @@ namespace CoinViewer.View
         private void DataGridMarkets_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Cache.selectedMarket = (Market)DataGridMarkets.SelectedItem;
-            String googleUrl = "https://www.google.com/search?q=" + Cache.selectedMarket.exchangeId;
+
+            String endpoint = CalloutService.endpointBuilder(CalloutService.EXCHANGES 
+                + Cache.selectedMarket.exchangeId);
+
+            string calloutResult = CalloutService.GetAsyncProperty(endpoint);
+
+            JsonParser.parseExchange(calloutResult);
+
             Process.Start(new ProcessStartInfo
             {
-                FileName = googleUrl,
-                UseShellExecute = true
+               FileName = Cache.selectedExchange.exchangeUrl,
+               UseShellExecute = true
             });
         }
     }
