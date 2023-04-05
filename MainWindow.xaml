@@ -107,7 +107,7 @@
 
                         <Grid>
 
-                            <Image Source="/Images/img_order.png"
+                            <Image Source="/Images/img_transaction.png"
                                    Style="{StaticResource Image_Style}"/>
 
                             <TextBlock Text="Markets" 

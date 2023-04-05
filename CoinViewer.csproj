@@ -37,25 +37,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\img_customer.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\img_home.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\img_order.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\img_product.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\img_refresh.png" />
-    <Resource Include="Images\img_setting.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\img_shipment.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Images\img_transaction.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
